@@ -17,6 +17,7 @@ describe('AppComponent', () => {
   it(`should have as title 'myApp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+    console.log(app.title)
     expect(app.title).toEqual('myApp');
   });
 
@@ -24,6 +25,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('myApp app is running!');
+    expect(compiled.querySelector('header a span')?.textContent).toContain('Todo list');
   });
 });

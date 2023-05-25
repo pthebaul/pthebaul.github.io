@@ -1,27 +1,55 @@
-# MyApp
+# Context
+Our fantastic product owner has a wonderful, amazing and revolutionary idea... he wants to build a new Todo application. 
+He has a good idea of the application behavior and comes with a backlog containing the following user stories :
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+# User stories
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 1 : List my TODOs
 
-## Code scaffolding
+### Description :
+As a user I would like to list my current todos
+### Acceptance criterias :
+- Each todo could have, at minimal, a related state and title
+- Some hard-coded todos will be initialized in this context to demonstrate the tool 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 2 : Change a TODO state
 
-## Build
+### Description :
+As a user I would like to change a todo state by checking a "box"
+### Acceptance criterias :
+- When a todo is done, it should be placed at the bottom of the list and should be crossed out
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 3 : Detail a TODO
 
-## Running unit tests
+### Description :
+As a user I would like to display one of my todo in a separate or dedicated view.
+This todo will contain its title and a description (which is a new information not shown in the previous view).
+### Acceptance criterias :
+- We can click on a todo (by any way) to access the details view of the todo
+- The todo could be accessed via a unique URL
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 4 : Add a new TODO
 
-## Running end-to-end tests
+### Description :
+As a user I would like to add a new todo in my list
+### Acceptance criterias :
+- The todo title is required
+- The todo description can be empty
+- The newly created todo has to be on top of the list of todos
+- You are free to choose the design / interaction 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Technical environment
+You're working in the WebFactory which provides the following technical recommendations :
+- The backend application should be based on your preferred languages (Java , JS, PHP, Python, Go, C++, ...) and/or Framework (Spring Boot, Django, .NetCore , NodeJS, Angular, React, ...)
+- To keep the UI simple
+- Code quality is very important, so all the code has to be covered by unit tests
+- Each user story should be realized in its own commit on master
+- The product owner is curious and likes to read the application code on Github and test it via Github Pages
+- The application should have a mocked backend and store all todos on it (extension of HttpXhrBackend)
 
-## Further help
+# Bonus
+You can add any new functionality in this wonderful project if you want to, in order to satisfy your PO 😉  
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
