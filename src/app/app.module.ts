@@ -7,10 +7,12 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TaskListItemComponent } from './task-list-item/task-list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaskListItemComponent
   ],
   imports: [
     BrowserModule,

@@ -8,10 +8,11 @@
 
 <div class="container">
   <div class="list-group">
-    <div *ngFor="let task of tasks" class="list-group-item">
-      <input type="checkbox" name="task" [checked]="task.isDone" />
-      <span class="ms-1" [class.isDone]="task.isDone">{{ task.title }}</span>
-    </div>
+      <app-task-list-item
+        *ngFor="let task of tasks"
+        [task]="task"
+        (refresh)="refreshList()">
+      </app-task-list-item>
   </div>
 </div>
 
