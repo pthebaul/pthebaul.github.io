@@ -1,7 +1,7 @@
 <div class="container">
   <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
     <a href="/" class="d-flex align-items-center mb-0 text-dark text-decoration-none">
-      <span class="fs-2">Todo list</span>
+      <span class="fs-2">{{ title }}</span>
     </a>
   </header>
 </div>
@@ -9,8 +9,8 @@
 <div class="container">
   <div class="list-group">
     <div *ngFor="let task of tasks" class="list-group-item">
-      <input type="checkbox" name="task" />
-      {{ task.title }}
+      <input type="checkbox" name="task" [checked]="task.isDone" />
+      <span class="ms-1" [class.isDone]="task.isDone">{{ task.title }}</span>
     </div>
   </div>
 </div>
