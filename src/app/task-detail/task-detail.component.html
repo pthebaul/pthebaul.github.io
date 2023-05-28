@@ -1,0 +1,10 @@
+<a routerLink="/">&lt; Retour</a>
+
+<div *ngIf="task" class="mt-2">
+    <h2 class="h1"><input class="me-4" type="checkbox" [checked]="task.isDone" disabled>{{ task.title }}</h2>
+    <p class="ms-5">{{ task.description }}</p>
+</div>
+
+<div *ngIf="notFound" class="mt-2">
+    <h2 class="h1">Erreur&nbsp;: Tâche non trouvée</h2>
+</div>

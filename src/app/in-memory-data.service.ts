@@ -8,7 +8,7 @@ import { Task } from './task';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const tasks = [
-      { id: 0, title: "Do a cross", isDone: true },
+      { id: 0, title: "Do a cross", description: "The most simple step", isDone: true },
       { id: 1, title: "Solve the first two layers", isDone: false },
       { id: 2, title: "Orientate the last layer", isDone: false },
       { id: 3, title: "Permutate the last layer", isDone: false }

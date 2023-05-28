@@ -1,3 +1,8 @@
+a {
+    color: #333;
+    text-decoration: none;
+}
+
 .isDone {
     text-decoration: line-through;
     color: grey;

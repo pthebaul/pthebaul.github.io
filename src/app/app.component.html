@@ -7,13 +7,5 @@
 </div>
 
 <div class="container">
-  <div class="list-group">
-      <app-task-list-item
-        *ngFor="let task of tasks"
-        [task]="task"
-        (refresh)="refreshList()">
-      </app-task-list-item>
-  </div>
+  <router-outlet></router-outlet>
 </div>
-
-<router-outlet></router-outlet>
