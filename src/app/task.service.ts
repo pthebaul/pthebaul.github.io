@@ -30,9 +30,10 @@ export class TaskService {
       .pipe(catchError(this.handleError<Task>(`getTask id=${id}`)));
   }
 
-  updateTask(task: Task): Observable<any> {
-    return this.http.put(this.tasksUrl, task, this.httpOptions)
-      .pipe(catchError(this.handleError<any>('updateTask')));
+  updateTask(task: Task): Observable<Task> {
+    const url = `${this.tasksUrl}/${task.id}`;
+    return this.http.put<Task>(url, task, this.httpOptions)
+      .pipe(catchError(this.handleError<Task>(`updateTask id=${task.id}`)));
   }
 
   addTask(task: Task): Observable<Task> {

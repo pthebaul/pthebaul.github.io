@@ -1,4 +1,4 @@
 <div *ngIf="task" class="list-group-item">
     <input type="checkbox" name="task" [checked]="task.isDone" [disabled]="task.isDone" (change)="stateChange($event)" />
-    <a routerLink="task/{{task.id}}" class="ms-2" [class.isDone]="task.isDone">{{ task.title }}</a>
+    <a routerLink="task/{{task.id}}" class="ms-2" [class.isDone]="task.isDone">{{ task.title }} (id: {{ task.id }}, order: {{ task.order }})</a>
 </div>

@@ -16,8 +16,7 @@ export class TaskListComponent {
   constructor(private taskService: TaskService) {}
 
   private compareTasks(left: Task, right: Task) {
-    const compareIsDone = (left.isDone === right.isDone) ? 0 : (left.isDone ? 1 : -1);
-    return compareIsDone || left.id - right.id;
+    return left.order - right.order;
   }
 
   ngOnInit(): void {
@@ -36,13 +35,15 @@ export class TaskListComponent {
     description = description.trim();
 
     this.taskService.addTask({ title, description } as Task)
-      .subscribe(task => { this.tasks.push(task); })
-
-    this.newTitle = '';
-    this.newDescription = '';
+      .subscribe(task => {
+        this.tasks.push(task);
+        this.newTitle = '';
+        this.newDescription = '';
+        this.refreshList();
+      })
   }
 
   refreshList(): void {
-      this.tasks.sort(this.compareTasks);
+    this.tasks.sort(this.compareTasks);
   }
 }

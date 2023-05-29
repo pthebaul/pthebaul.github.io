@@ -10,15 +10,20 @@ import { TaskService } from '../task.service';
 })
 export class TaskListItemComponent {
   @Input() task?: Task;
-  @Output() refresh = new EventEmitter<any>();
+  @Output() refresh = new EventEmitter<number>();
 
   constructor(private taskService: TaskService) {}
 
   stateChange(event: Event) {
     if (this.task) {
+      const id = this.task.id;
       const test: boolean = (<HTMLInputElement> event.target).checked;
       this.task.isDone = test;
-      this.taskService.updateTask(this.task).subscribe(() => {this.refresh.emit()});
+      this.taskService.updateTask(this.task)
+        .subscribe(task => {
+          if (this.task) { this.task.order = task.order; }
+          this.refresh.emit();
+        });
     }
   }
 }
