@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Task } from './task';
-import { TASKS } from './mock-tasks';
 
 @Injectable({
   providedIn: 'root'
