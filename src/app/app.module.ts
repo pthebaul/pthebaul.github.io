@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { TaskListItemComponent } from './task-list-item/task-list-item.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TaskDetailComponent } from './task-detail/task-detail.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

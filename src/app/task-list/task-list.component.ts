@@ -10,6 +10,8 @@ import { TaskService } from '../task.service';
 })
 export class TaskListComponent {
   tasks: Task[] = [];
+  newTitle: string = '';
+  newDescription: string = '';
 
   constructor(private taskService: TaskService) {}
 
@@ -26,6 +28,18 @@ export class TaskListComponent {
     this.taskService.getTasks().subscribe((tasks) => {
       this.tasks = tasks.sort(this.compareTasks);
     });
+  }
+
+  addTask(title: string, description: string): void {
+    title = title.trim();
+    if (!title) { return; }
+    description = description.trim();
+
+    this.taskService.addTask({ title, description } as Task)
+      .subscribe(task => { this.tasks.push(task); })
+
+    this.newTitle = '';
+    this.newDescription = '';
   }
 
   refreshList(): void {

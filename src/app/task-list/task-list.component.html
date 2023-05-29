@@ -1,3 +1,11 @@
+<div class="mb-4" (keyup.enter)="addTask(newTitle, newDescription)">
+    <input type="text" class="form-control" [(ngModel)]="newTitle" placeholder="Nouvelle tâche" />
+    <input *ngIf="newTitle" type="text" class="form-control form-control-sm mt-1" [(ngModel)]="newDescription" placeholder="Description (facultative)" />
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-2">
+        <button class="btn btn-primary" type="button" (click)="addTask(newTitle, newDescription)">Ajouter</button>
+    </div>
+</div>
+
 <div class="list-group">
     <app-task-list-item
         *ngFor="let task of tasks"

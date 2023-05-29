@@ -36,6 +36,11 @@ export class TaskService {
       .pipe(catchError(this.handleError<any>('updateTask')));
   }
 
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.tasksUrl, task, this.httpOptions)
+      .pipe(catchError(this.handleError<Task>('addTask')));
+  }
+
   handleError<T>(operation: string, result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
