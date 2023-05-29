@@ -17,7 +17,6 @@ export class InMemoryDataService implements InMemoryDbService {
   }
 
   get(reqInfo: RequestInfo) {
-    console.log('get', reqInfo);
     return undefined;
   }
 
@@ -64,7 +63,6 @@ export class InMemoryDataService implements InMemoryDbService {
     item.isDone = body.isDone;
     item.title = body.title;
     item.description = body.description;
-    console.log(item);
 
     // respond
     return reqInfo.utils.createResponse$(() => {
