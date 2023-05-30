@@ -11,7 +11,7 @@ import { Task } from './task';
 })
 export class TaskService {
 
-  private tasksUrl = 'api/tasks';
+  private tasksUrl = 'localhost:9000/tasks';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/type' })
